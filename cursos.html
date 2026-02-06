@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Move Language Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">▶</div>
+                <div>
+                    <div style="font-size: 24px;">Move</div>
+                    <div style="font-size: 12px; color: #b8b8d4;">Language Center</div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="cursos.html" class="active">Cursos</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">🌙</button>
+                <a href="index.html#comprar" class="btn-primary">Comprar</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="cursos-hero">
+        <div class="container">
+            <h1>Nuestros Cursos</h1>
+            <p class="subtitle">Elige el curso perfecto para tu nivel y objetivos de inglés</p>
+        </div>
+    </section>
+
+    <section class="all-courses">
+        <div class="container">
+            <div class="courses-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="beginner">Principiante</button>
+                <button class="filter-btn" data-filter="intermediate">Intermedio</button>
+                <button class="filter-btn" data-filter="advanced">Avanzado</button>
+            </div>
+
+            <div class="course-grid">
+                <!-- Beginner Courses -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">🌟</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge beginner-badge">Principiante</span>
+                            <span class="course-price">$99</span>
+                        </div>
+                        <h3>Fundamentos de Inglés</h3>
+                        <p>Perfecto para principiantes absolutos. Aprende gramática básica, vocabulario y habilidades de conversación.</p>
+                        <div class="course-details">
+                            <span>📅 12 semanas</span>
+                            <span>👥 Clases en vivo</span>
+                            <span>📱 Acceso móvil</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">🗣️</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge beginner-badge">Principiante</span>
+                            <span class="course-price">$89</span>
+                        </div>
+                        <h3>Conversación para Principiantes</h3>
+                        <p>Construye confianza hablando inglés con conversaciones prácticas y cotidianas.</p>
+                        <div class="course-details">
+                            <span>📅 8 semanas</span>
+                            <span>👥 Grupos pequeños</span>
+                            <span>🎧 Audio interactivo</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+
+                <!-- Intermediate Courses -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">📖</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge intermediate-badge">Intermedio</span>
+                            <span class="course-price">$129</span>
+                        </div>
+                        <h3>Inglés Intermedio</h3>
+                        <p>Expande tu vocabulario y domina estructuras gramaticales complejas con confianza.</p>
+                        <div class="course-details">
+                            <span>📅 10 semanas</span>
+                            <span>👥 Clases en vivo</span>
+                            <span>📚 Materiales completos</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">💼</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge intermediate-badge">Intermedio</span>
+                            <span class="course-price">$149</span>
+                        </div>
+                        <h3>Inglés Empresarial</h3>
+                        <p>Perfecto para profesionales. Domina terminología empresarial y habilidades de comunicación.</p>
+                        <div class="course-details">
+                            <span>📅 12 semanas</span>
+                            <span>👥 Clases personalizadas</span>
+                            <span>💼 Casos reales</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+
+                <!-- Advanced Courses -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image">🚀</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge advanced-badge">Avanzado</span>
+                            <span class="course-price">$199</span>
+                        </div>
+                        <h3>Dominio Avanzado de Inglés</h3>
+                        <p>Logra competencia similar a la de un nativo con nuestro curso más completo. Perfecto para exámenes como IELTS y TOEFL.</p>
+                        <div class="course-details">
+                            <span>📅 16 semanas</span>
+                            <span>👥 Mentoría 1-on-1</span>
+                            <span>🏆 Certificación</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image">🎯</div>
+                    <div class="course-content">
+                        <div class="course-header">
+                            <span class="course-badge advanced-badge">Avanzado</span>
+                            <span class="course-price">$179</span>
+                        </div>
+                        <h3>Preparación de Examen (IELTS)</h3>
+                        <p>Preparación especializada para examen IELTS. Estrategias, pruebas prácticas y retroalimentación de expertos.</p>
+                        <div class="course-details">
+                            <span>📅 14 semanas</span>
+                            <span>👥 Clases enfocadas</span>
+                            <span>📝 Pruebas simuladas</span>
+                        </div>
+                        <a href="#" class="btn-primary full-width">Inscribirse Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-comparison">
+        <div class="container">
+            <h2>Comparar Cursos</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Principiante</th>
+                        <th>Intermedio</th>
+                        <th>Avanzado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Duración</td>
+                        <td>8-12 semanas</td>
+                        <td>10-12 semanas</td>
+                        <td>14-16 semanas</td>
+                    </tr>
+                    <tr>
+                        <td>Clases en Vivo</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Materiales Completos</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Mentoría Personal</td>
+                        <td>-</td>
+                        <td>Adicional</td>
+                        <td>✓ Incluida</td>
+                    </tr>
+                    <tr>
+                        <td>Certificación</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso de Por Vida</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para Comenzar tu Viaje en Inglés?</h2>
+            <p>Únete a más de 5000 estudiantes satisfechos que ya han transformado sus vidas</p>
+            <a href="#" class="btn-primary" style="font-size: 16px; padding: 15px 40px;">Elige tu Curso Ahora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Move Language Center</h4>
+                    <p>Tu socio en el aprendizaje del inglés</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@movelanguage.com</p>
+                    <p>Teléfono: +34 900 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Move Language Center. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                courseCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-level') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Theme Toggle Script
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', currentTheme);
+        updateThemeToggle(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeToggle(theme);
+        });
+        
+        function updateThemeToggle(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>

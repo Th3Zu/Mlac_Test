@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Fundamentals - Move Language Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Course Page Specific Styles */
+        .course-header {
+            background: rgba(20, 20, 60, 0.9);
+            padding: 20px 0;
+            border-bottom: 2px solid #2a2a5e;
+            margin-bottom: 40px;
+        }
+
+        .course-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .course-title-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .course-info {
+            flex: 1;
+        }
+
+        .course-info h1 {
+            font-size: 32px;
+            color: #c4ff3d;
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            color: #b8b8d4;
+            font-size: 14px;
+        }
+
+        .back-button {
+            color: #c4ff3d;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: gap 0.3s;
+        }
+
+        .back-button:hover {
+            gap: 15px;
+        }
+
+        .course-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .course-content {
+            background: rgba(40, 40, 90, 0.6);
+            border: 1px solid #3a3a7e;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .lesson-section {
+            margin-bottom: 30px;
+        }
+
+        .lesson-section h2 {
+            color: #c4ff3d;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(196, 255, 61, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .lesson-content {
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .lesson-content p {
+            margin-bottom: 15px;
+        }
+
+        .lesson-example {
+            background: rgba(30, 30, 70, 0.8);
+            padding: 15px;
+            border-left: 4px solid #c4ff3d;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            color: #c4ff3d;
+        }
+
+        .sidebar {
+            background: rgba(40, 40, 90, 0.6);
+            border: 1px solid #3a3a7e;
+            border-radius: 10px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            color: #c4ff3d;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .lesson-list {
+            list-style: none;
+        }
+
+        .lesson-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(196, 255, 61, 0.1);
+        }
+
+        .lesson-item:last-child {
+            border-bottom: none;
+        }
+
+        .lesson-link {
+            color: #b8b8d4;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+
+        .lesson-link:hover {
+            color: #c4ff3d;
+        }
+
+        .lesson-link.active {
+            color: #c4ff3d;
+            font-weight: bold;
+        }
+
+        .lesson-status {
+            font-size: 12px;
+        }
+
+        .completed {
+            color: #a8e836;
+        }
+
+        .current {
+            color: #c4ff3d;
+        }
+
+        .not-started {
+            color: #7a7a9e;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(196, 255, 61, 0.1);
+        }
+
+        .btn-secondary {
+            background: rgba(196, 255, 61, 0.1);
+            color: #c4ff3d;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid #c4ff3d;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background: #c4ff3d;
+            color: #1a1a3e;
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-info {
+            background: rgba(30, 30, 70, 0.8);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background: rgba(196, 255, 61, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #c4ff3d, #a8e836);
+            height: 100%;
+        }
+
+        .progress-text {
+            color: #c4ff3d;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .course-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .course-title-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="course-container">
+            <div class="course-title-section">
+                <div class="course-info">
+                    <h1>English Fundamentals</h1>
+                    <p class="course-meta">Nivel: Beginner | Progreso: 63% (13/20 lecciones)</p>
+                </div>
+                <a href="dashboard.html" class="back-button">← Volver al Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Course Content -->
+    <main class="course-container">
+        <div class="course-layout">
+            <!-- Main Content -->
+            <div class="course-content">
+                <!-- Lesson 14: Past Tense -->
+                <div class="lesson-section">
+                    <h2>Lección 14: Past Tense (Pasado Simple)</h2>
+                    <div class="lesson-content">
+                        <p>En esta lección aprenderemos sobre el <strong>Past Simple</strong>, uno de los tiempos verbales más importantes del inglés. El pasado simple se utiliza para hablar de acciones que ocurrieron en un momento específico en el pasado.</p>
+                        
+                        <h3 style="color: #c4ff3d; margin-top: 20px; margin-bottom: 10px;">Formación del Past Simple</h3>
+                        <p>Para verbos regulares, agregamos <strong>-ed</strong> al final del verbo:</p>
+                        
+                        <div class="lesson-example">
+                            <div>Walk → Walked</div>
+                            <div>Play → Played</div>
+                            <div>Study → Studied</div>
+                        </div>
+
+                        <h3 style="color: #c4ff3d; margin-top: 20px; margin-bottom: 10px;">Verbos Irregulares</h3>
+                        <p>Algunos verbos no siguen la regla de agregar -ed. Aquí hay algunos ejemplos comunes:</p>
+                        
+                        <div class="lesson-example">
+                            <div>Go → Went</div>
+                            <div>Have → Had</div>
+                            <div>Do → Did</div>
+                            <div>See → Saw</div>
+                            <div>Make → Made</div>
+                        </div>
+
+                        <h3 style="color: #c4ff3d; margin-top: 20px; margin-bottom: 10px;">Ejemplos en Oraciones</h3>
+                        <p><strong>Afirmativo:</strong></p>
+                        <div class="lesson-example">
+                            <div>I watched a movie yesterday.</div>
+                            <div>She went to the beach last week.</div>
+                            <div>They played football in the park.</div>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>Negativo:</strong></p>
+                        <div class="lesson-example">
+                            <div>I didn't watch a movie.</div>
+                            <div>She didn't go to the beach.</div>
+                            <div>They didn't play football.</div>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>Interrogativo:</strong></p>
+                        <div class="lesson-example">
+                            <div>Did you watch a movie?</div>
+                            <div>Did she go to the beach?</div>
+                            <div>Did they play football?</div>
+                        </div>
+
+                        <h3 style="color: #c4ff3d; margin-top: 20px; margin-bottom: 10px;">Palabras de Tiempo Comunes</h3>
+                        <p>El Past Simple se usa frecuentemente con estas expresiones de tiempo:</p>
+                        <div class="lesson-example">
+                            <div>Yesterday, last week, last month, two days ago, in 2023</div>
+                        </div>
+
+                        <div style="background: rgba(196, 255, 61, 0.1); padding: 20px; border-radius: 6px; margin-top: 25px; border-left: 4px solid #c4ff3d;">
+                            <p style="color: #c4ff3d; margin: 0;"><strong>💡 Tip:</strong> Para hacer preguntas con el past simple, siempre usamos "did" + verbo base. ¡No agregues -ed en la pregunta!</p>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="nav-buttons">
+                            <button class="btn-secondary" onclick="previousLesson()">← Lección Anterior</button>
+                            <button class="btn-secondary" onclick="nextLesson()">Próxima Lección →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="progress-info">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 63%;"></div>
+                    </div>
+                    <div class="progress-text">Progreso: 63%</div>
+                </div>
+
+                <h3>Lecciones</h3>
+                <ul class="lesson-list">
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 1</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 2</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 3</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 4</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 5</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 6</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 7</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 8</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 9</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 10</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 11</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 12</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>✓</span>
+                            <span>Lección 13</span>
+                            <span class="lesson-status completed">Completada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link active">
+                            <span>→</span>
+                            <span>Lección 14</span>
+                            <span class="lesson-status current">En Progreso</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 15</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 16</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 17</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 18</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 19</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                    <li class="lesson-item">
+                        <a href="#" class="lesson-link">
+                            <span>○</span>
+                            <span>Lección 20</span>
+                            <span class="lesson-status not-started">No iniciada</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        function previousLesson() {
+            alert('Mostrando lección anterior');
+            // Aquí iría la lógica para navegar a la lección anterior
+        }
+
+        function nextLesson() {
+            alert('Mostrando próxima lección');
+            // Aquí iría la lógica para navegar a la próxima lección
+        }
+
+        // Agregar evento de navegación al volver
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
