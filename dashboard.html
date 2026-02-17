@@ -8,9 +8,9 @@
     <style>
         /* Dashboard Specific Styles */
         .dashboard-header {
-            background: var(--bg-secondary);
+            background: rgba(20, 20, 60, 0.9);
             padding: 20px 0;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid #2a2a5e;
             margin-bottom: 40px;
         }
 
@@ -28,8 +28,8 @@
         }
 
         .dashboard-card {
-            background: var(--bg-card);
-            border: 1px solid var(--card-border);
+            background: rgba(40, 40, 90, 0.6);
+            border: 1px solid #3a3a7e;
             border-radius: 10px;
             padding: 25px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -41,7 +41,7 @@
         }
 
         .dashboard-card h3 {
-            color: var(--accent);
+            color: #c4ff3d;
             margin-bottom: 15px;
             font-size: 20px;
         }
@@ -194,12 +194,9 @@
     <!-- Dashboard Header -->
     <header class="dashboard-header">
         <div class="dashboard-container">
-            <div class="header-top" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="header-top">
                 <h1 style="font-size: 28px;">Mi Dashboard</h1>
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">🌙</button>
-                    <a href="index.html" class="back-button">← Volver al Inicio</a>
-                </div>
+                <a href="index.html" class="back-button">← Volver al Inicio</a>
             </div>
         </div>
     </header>
@@ -343,26 +340,6 @@
             e.preventDefault();
             window.location.href = 'index.html';
         });
-
-        // Theme Toggle Script
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        
-        // Check for saved theme preference or default to dark
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        html.setAttribute('data-theme', currentTheme);
-        updateThemeToggle(currentTheme);
-        
-        themeToggle.addEventListener('click', () => {
-            const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            updateThemeToggle(theme);
-        });
-        
-        function updateThemeToggle(theme) {
-            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
     </script>
 </body>
 </html>
